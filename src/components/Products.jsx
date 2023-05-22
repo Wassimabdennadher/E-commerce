@@ -3,11 +3,11 @@ import Card from './Card'
 import useProduct from '../context/ProductContext/useProduct'
 function Products(props) {
     const phones = props.products
-    const {products} = useProduct()
+    // const {products} = useProduct()
   return (
     <div className={`cards-container`} >
         {
-        products.map((item, index) => {
+        phones.map((item, index) => {
             return (
                 <Card key={index} item={item}/>
             )
