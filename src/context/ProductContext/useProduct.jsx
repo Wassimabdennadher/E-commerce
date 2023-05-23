@@ -1,4 +1,4 @@
-import React from 'react'
+import axios from 'axios'
 import { useProductContext } from './productContextProvider'
 
 function useProduct() {
@@ -11,26 +11,22 @@ function useProduct() {
         setFilters
     } = useProductContext()
 
-    const fetshProduct = () => {
-        useEffect(() => {
-            return async () => {
+    const fetshProduct = async () => {
                 try {
-                    setIsLoading(true)
-                    const phones = await axios.get('https://dummyjson.com/products')
-                    setIsLoading(false)
-                    setProducts(phones.data.products)
+                    setIsFetshing(true)
+                    const response = await axios.get('https://dummyjson.com/products')
+                    setIsFetshing(false)
+                    setProducts(response.data.products)
                 } catch (error) {
                     console.log(error.message)
                 }
             }
-        }, []
-        )
-    }
+
     const flterProducts = () => {
-        setIsLoading(true)
+        setIsFetshing(true)
         const filteredProduct = products.filter(item => item.title.toLowerCase().includes(filters.toLowerCase()))
         setProducts(filteredProduct)
-        setIsLoading(false)
+        setIsFetshing(false)
     }
     
     return({
@@ -38,7 +34,8 @@ function useProduct() {
         products,
         fetshProduct,
         flterProducts,
-        filters  
+        filters,
+        setFilters  
     }
 )
 }

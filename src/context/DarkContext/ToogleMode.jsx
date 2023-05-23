@@ -1,7 +1,7 @@
 import { createContext, useState } from "react";
 const ToogleModeContest = createContext()
 const ToogleModeProvider = (props) => {
-    const [dark,setDark] = useState(false)
+    const [dark,setDark] = useState(true)
     const toogleDark = () => {
         setDark(!dark)
     }

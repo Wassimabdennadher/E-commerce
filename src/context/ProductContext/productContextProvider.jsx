@@ -7,6 +7,7 @@ const useProductContext = () => {
     if (!context) {
         throw new Error('Context must be within a provider')
     }
+    return context
 }
 
 const ProductProvider = (props) => {

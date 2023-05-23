@@ -1,29 +1,25 @@
-import { useContext, useEffect, useState } from 'react'
+import { useContext, useEffect } from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
 import Cart from './components/cart'
 import Size from './components/Sizes'
 import Products from './components/Products'
-import axios from 'axios'
 import { ToogleModeContest } from './context/DarkContext/ToogleMode'
 import ToogleModeButton from './components/ToogleModeButton'
+import useProduct from './context/ProductContext/useProduct'
+import Spinner from './components/Spinner'
 
 function App() {
-  const [products, setProducts] = useState([])
-  const { dark } = useContext(ToogleModeContest)
+  const {fetshProduct} = useProduct()
   useEffect(() => {
-    return async () => {
-      try {
-        const phones = await axios.get('https://dummyjson.com/products')
-        setProducts(phones.data.products)
-      } catch (error) {
-        console.log(error.message)
-      }
-    }
-  }, []
-  )
+    fetshProduct()
+   }, []
+   )
+  const { dark } = useContext(ToogleModeContest)
+  const {products ,isFetshing} = useProduct()
   return (
     <div >
       <Router>
+        {isFetshing && <Spinner />}
         <Cart />
         <ToogleModeButton />
         <main className={`container-fluid container-grid ${dark ? 'light' : 'dark'}`} >
