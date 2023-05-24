@@ -7,6 +7,7 @@ import { ToogleModeContest } from './context/DarkContext/ToogleMode'
 import ToogleModeButton from './components/ToogleModeButton'
 import useProduct from './context/ProductContext/useProduct'
 import Spinner from './components/Spinner'
+import useCart from './context/CartContext/useCart'
 
 function App() {
   const {fetshProduct} = useProduct()

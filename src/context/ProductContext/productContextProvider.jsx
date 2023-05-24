@@ -13,13 +13,13 @@ const useProductContext = () => {
 const ProductProvider = (props) => {
     const [isFetshing, setIsFetshing] = useState(false)
     const [products, setProducts] = useState([])
-    const [fliters, setFilters] = useState([])
+    const [filters, setFilters] = useState()
     const productContextValue = {
         isFetshing,
         setIsFetshing,
         products,
         setProducts,
-        fliters,
+        filters,
         setFilters
     }
     return (

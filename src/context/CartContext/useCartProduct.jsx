@@ -1,8 +1,7 @@
-import { useContext } from "react"
 import { useCartContext } from "./cartContextProvider"
 
 function useCartProduct() {
-    const { products, setProducts } = useContext(useCartContext)
+    const { products, setProducts } = useCartContext()
     const updateProductSafely = (currentProduct, targetProduct, quantity) => {
         if (currentProduct.id === targetProduct.id) {
             return Object.assign({ ...currentProduct, quantity: currentProduct.quantity + quantity })
@@ -19,7 +18,7 @@ function useCartProduct() {
     }
     const decerementQuantity = (productToDecrease) => {
         const updatedProduct = products.map(product => {
-            return updateProductSafely(product, productToDecrease , -1)
+            return updateProductSafely(product, productToDecrease, -1)
         })
         setProducts(updatedProduct)
     }
@@ -28,12 +27,10 @@ function useCartProduct() {
         let updatedProduct;
         const findProduct = products.find(product => product.id === productToAdd.id)
         if (!findProduct) {
-            return updatedProduct = [...products, productToAdd]
+            updatedProduct = [...products, { ...productToAdd, quantity: 0 }]
+            return setProducts(updatedProduct)
         } else {
-            updatedProduct = products.map(product => {
-                return updateProductSafely(product, productToAdd, productToAdd.quantity)
-            })
-            setProducts(updatedProduct)
+            return alert('Product already exists')
         }
     }
 
@@ -48,12 +45,12 @@ function useCartProduct() {
     }
 
 
-    return( {
-            incerementQuantity,
-            decerementQuantity,
-            addProduct,
-            removeProduct,
-            products
+    return ({
+        incerementQuantity,
+        decerementQuantity,
+        addProduct,
+        removeProduct,
+        products
     })
 }
 

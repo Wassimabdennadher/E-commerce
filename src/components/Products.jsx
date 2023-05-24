@@ -1,10 +1,11 @@
-import React, {useEffect} from 'react'
+import React, { useEffect } from 'react'
 import Card from './Card'
 import useProduct from '../context/ProductContext/useProduct'
 function Products() {
-  const { products } = useProduct()
-
-
+  const { products, flterProducts, filters } = useProduct()
+  useEffect(() => {
+    flterProducts(filters)
+  }, [filters])
   return (
     <div className={`cards-container`} >
       {

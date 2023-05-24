@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { useProductContext } from './productContextProvider'
-
+let items = []
 function useProduct() {
     const {
         isFetshing,
@@ -17,6 +17,7 @@ function useProduct() {
                     const response = await axios.get('https://dummyjson.com/products')
                     setIsFetshing(false)
                     setProducts(response.data.products)
+                    items = response.data.products
                 } catch (error) {
                     console.log(error.message)
                 }
@@ -24,7 +25,7 @@ function useProduct() {
 
     const flterProducts = () => {
         setIsFetshing(true)
-        const filteredProduct = products.filter(item => item.title.toLowerCase().includes(filters.toLowerCase()))
+        const filteredProduct = items.filter(item => item.title.toLowerCase().includes(filters.toLowerCase()))
         setProducts(filteredProduct)
         setIsFetshing(false)
     }

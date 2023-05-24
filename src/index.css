@@ -35,7 +35,6 @@ h1 {
 }
 
 button {
-  /* border-radius: 8px; */
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
   font-size: 1.5em;
@@ -57,89 +56,123 @@ button {
 button:hover {
   border-color: #e5f326;
 }
+.special-cart-product{
+  background-color:#242424;
+  color: white;
+  overflow: hidden;
+  width: 100%;
+  height: 100px;
+}
 
 .custom-cart {
   width: 10px;
   height: 100vh;
-  background-color: #242424;
+  background-color: #1f1e1e;
   position: fixed;
   top: 0;
   right: 0;
   transition: width 1s;
   z-index: 5555;
 }
+.line-break{
+  background-color: white;
+}
+.total {
+  position: fixed;
+  bottom: 0;
+  background-color: black;
+  width: 100%;
+  height: 150px;
+}
+
+.custom-products-cart {
+  display: grid;
+  grid-template-rows: 1fr;
+  gap: 10px;
+  text-align: center;
+}
+
 .size-button {
   width: 100%;
-  height: 50px;
+  height: 40px;
   font-size: 10px;
   font-weight: bold;
   border-radius: 5px;
   background-color: #242424;
-  color:  rgb(218, 197, 12);
+  color: rgb(218, 197, 12);
   border: 1px solid rgb(218, 197, 12);
 }
-.size-button:hover{
+
+.size-button:hover {
   background-color: rgb(218, 197, 12);
-  color: #242424 ;
-  border: 1x solid #242424  ;
+  color: #242424;
+  border: 1x solid #242424;
 }
 
-.size-button:hover{
-  border-color:#242424 ;
+.size-button:hover {
+  border-color: #242424;
 }
-.phone-style{
+
+.phone-style {
   width: 100%;
   text-align: start;
   font-size: 20px;
 }
-.add-to-cart-button{
+
+.add-to-cart-button {
   background-color: #242424;
   color: rgb(218, 197, 12);
-  border: 1px solid rgb(218, 197, 12);;
+  border: 1px solid rgb(218, 197, 12);
   font-weight: bold;
   width: 100%;
 }
-.add-to-cart-button:hover{
+
+.add-to-cart-button:hover {
   background-color: rgb(218, 197, 12);
   color: #242424;
   border: 1px solid #242424;
 }
 
-.sizes-container{
+.sizes-container {
   padding: 10px;
   margin-top: 100px;
   width: 200px;
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 5px;
   font-weight: bold;
 }
-.container-grid{
+
+.container-grid {
   display: grid;
-  grid-template-rows:1fr ;
+  grid-template-rows: 1fr;
   grid-template-columns: 200px auto;
 }
-.cards-container{
+
+.cards-container {
   margin-top: 100px;
-  display: flex ;
+  display: flex;
   flex-wrap: wrap;
   gap: 10px;
   align-items: center;
   justify-content: center;
 }
-.card-size{  
+
+.card-size {
   width: 250px;
   height: 400px;
   background-color: rgba(255, 250, 158, 0.6);
 }
-.card-body-flex{
+
+.card-body-flex {
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
 }
-.image-size{
+
+.image-size {
   width: 100%;
   height: 200px;
   padding: 2px;
@@ -174,12 +207,15 @@ button:hover {
   align-items: center;
 }
 
-.fa-moon {color: #f1c40f;}
+.fa-moon {
+  color: #f1c40f;
+}
 
-.fa-sun {color: #f39c12;}
+.fa-sun {
+  color: #f39c12;
+}
 
 .checkbox-label .ball {
-  /* background-color: #fff; */
   width: 22px;
   height: 22px;
   position: absolute;
@@ -189,23 +225,25 @@ button:hover {
   transition: transform 0.2s linear;
 }
 
-.checkbox:checked + .checkbox-label .ball {
+.checkbox:checked+.checkbox-label .ball {
   transform: translateX(24px);
 }
+
 .dark {
   background-color: #242424;
   color: #fff;
 }
+
 .light {
   background-color: #fff;
   color: #242424;
 }
-.sweet-loading{
+
+.sweet-loading {
   position: fixed;
-  top : 50%;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
-  transform: translateY(-50%);
+  transform: translate(-50%, -50%);
 }
 
 @media (prefers-color-scheme: light) {
