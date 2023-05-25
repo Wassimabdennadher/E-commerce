@@ -1,14 +1,19 @@
-import React, { useState } from 'react'
+import React, { useMemo, useState } from 'react'
 import useCart from '../context/CartContext/useCart'
 import CartProduct from './CartProduct'
 
 function cart() {
     const { isOpen, closeCard, openCard, products } = useCart()
-
     const handleToogleIsOpen = () => {
         isOpen ? closeCard() : openCard()
     }
-
+    const total = useMemo(() => {
+        let sumNumber = 0 
+        products.map(product => {
+            sumNumber = sumNumber + (product.price * (product.quantity + 1))
+        })
+        return sumNumber
+    }, [products])
     return (
         <div className={`custom-cart  ${isOpen ? 'trans' : ''}`} >
             <div className='cart_container'>
@@ -25,8 +30,8 @@ function cart() {
 
                 </div>
             </div>
-            <div className='total'>
-                <span style={{ color: 'white' }}>Total : </span>
+            <div className='total '>
+                <span style={{ color: 'white' }}>Total : {total}</span>
             </div>
         </div>
     )

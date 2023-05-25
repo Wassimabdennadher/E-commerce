@@ -38,10 +38,9 @@ function useCartProduct() {
         let updatedProduct
         const findProduct = products.find(product => product.id === productToRemove.id)
         if (findProduct) {
-            return updatedProduct = products.filter(product => product.id !== productToRemove.id)
+            updatedProduct = products.filter(product => product.id !== productToRemove.id)
+            return  setProducts(updatedProduct)
         }
-        setProducts(updatedProduct)
-
     }
 
 
