@@ -262,3 +262,13 @@ button:hover {
   }
 
 }
+@media only screen and (max-width: 600px) {
+  .container-grid{
+    grid-template-columns: none;
+    justify-content: center;
+    align-items: center;
+  }
+  .trans {
+    width: 250px;
+  }
+}
