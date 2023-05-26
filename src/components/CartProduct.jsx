@@ -12,7 +12,7 @@ function CartProduct(props) {
                 </div>
                 <div className="col-md-8">
                     <div className="card-body">
-                        <h6 className="card-title">{product.title}</h6>
+                        <h6 className="card-title cut-text">{product.title}</h6>
                         <div className='d-flex justify-content-center align-items-around gap-2'>
                             <h6 className="card-title">{`Quantity Added : ${product.quantity + 1}`} </h6>
                                 <i className={`bi bi-dash-circle`} onClick={() => {if (product.quantity >= 1){decerementQuantity(product)}}}></i>
