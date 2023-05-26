@@ -18,7 +18,7 @@ function cart() {
         <div className={`custom-cart  ${isOpen ? 'trans' : ''}`} >
             <div className='cart_container'>
                 <button className={`custom_button ${!isOpen ? 'custom-close-button' : ''}`} onClick={() => { handleToogleIsOpen() }}  >
-                    <i class={`bi bi-${isOpen ? 'x' : 'cart4'}`}></i>
+                    <i className={`bi bi-${isOpen ? 'x' : 'cart4'}`}></i>
                 </button>
                 <div className='custom-products-cart' >
                     {isOpen && products.length === 0 ? <span style={{ color: 'white' }}>Add some products here</span> : <span></span>}

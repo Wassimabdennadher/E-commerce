@@ -15,7 +15,7 @@ function CartProduct(props) {
                         <h6 className="card-title">{product.title}</h6>
                         <div className='d-flex justify-content-center align-items-around gap-2'>
                             <h6 className="card-title">{`Quantity Added : ${product.quantity + 1}`} </h6>
-                                <i className="bi bi-dash-circle" onClick={() => {if (product.quantity >= 1){decerementQuantity(product)}}}></i>
+                                <i className={`bi bi-dash-circle`} onClick={() => {if (product.quantity >= 1){decerementQuantity(product)}}}></i>
                                 <i className="bi bi-plus-circle" onClick={() => incerementQuantity(product)}></i>          
                         </div>
                         <h6 className="card-title">{`${product.price * (product.quantity + 1)} Dinar(s)`}</h6>

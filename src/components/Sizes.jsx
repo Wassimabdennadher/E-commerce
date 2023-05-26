@@ -30,7 +30,7 @@ function Size() {
         <div className='d-inline'>
             <div className='sizes-container'>
                 <form onSubmit={handleSubmit}>
-                    <label >Search here :</label>
+                    <label htmlFor='' >Search here :</label>
                     <input type="text" value={text} onChange={e => setText(e.target.value)} />
                 </form>
                 <div className='phone-style'>Last search(s) :</div>
