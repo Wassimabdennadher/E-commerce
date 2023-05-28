@@ -8,7 +8,7 @@ function Products() {
   }, [filters])
   return (
     <div className='container-fluid p-2 mt-5' >
-      <div className='row g-2'>
+      <div className='products-container-cards'>
         {
           products.map((item, index) => {
             return (

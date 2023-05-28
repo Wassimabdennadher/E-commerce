@@ -46,8 +46,9 @@ button {
 button:hover {
   border-color: #e5f326;
 }
-.special-cart-product{
-  background-color:#242424;
+
+.special-cart-product {
+  background-color: #242424;
   color: white;
   overflow: hidden;
   width: 100%;
@@ -66,15 +67,17 @@ button:hover {
   transition: width 1s;
   z-index: 5555;
 }
-.line-break{
+
+.line-break {
   background-color: white;
 }
+
 .total {
   position: absolute;
   bottom: 0;
   background-color: rgba(22, 22, 22, 0.9);
   width: 100%;
- padding: 20px;
+  padding: 20px;
 }
 
 .custom-products-cart {
@@ -124,8 +127,9 @@ button:hover {
   color: #242424;
   border: 1px solid #242424;
 }
-.special-cart-product:hover{
-  border: 1px rgb(218, 197, 12) solid ;
+
+.special-cart-product:hover {
+  border: 1px rgb(218, 197, 12) solid;
 }
 
 .sizes-container {
@@ -157,10 +161,11 @@ button:hover {
   height: 400px;
   background-color: rgba(255, 250, 158, 0.6);
 }
-.cut-text { 
+
+.cut-text {
   text-overflow: ellipsis;
-  overflow: hidden; 
-  width: 200px; 
+  overflow: hidden;
+  width: 200px;
   white-space: nowrap;
 }
 
@@ -192,7 +197,8 @@ button:hover {
   opacity: 0;
   position: absolute;
 }
-.shopnstop{
+
+.shopnstop {
   position: absolute;
   top: 20px;
   width: 100%;
@@ -252,23 +258,46 @@ button:hover {
   transform: translate(-50%, -50%);
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-
-  a:hover {
-    color: #747bff;
-  }
-
+.products-container-cards {
+  display: grid;
+  gap: 2px;
 }
-@media only screen and (max-width: 600px) {
-  .container-grid{
+
+@media only screen and (max-width: 793px) {
+  .products-container-cards {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 793px) {
+  .products-container-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 950px) {
+  .products-container-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .products-container-cards {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+
+@media only screen and (max-width: 530px) {
+  .container-grid {
     grid-template-columns: none;
     justify-content: center;
     align-items: center;
   }
+
   .trans {
     width: 250px;
   }

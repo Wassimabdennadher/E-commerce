@@ -16,9 +16,11 @@ function cart() {
     }, [products])
     return (
         <div className={`custom-cart  ${isOpen ? 'trans' : ''}`} >
-            <div className='shopnstop'>
-                <i className="bi bi-cart4 fs-5 "></i>
-            </div>
+            {
+                isOpen
+                    ? <div className='shopnstop'> <i className="bi bi-cart4 fs-5 "></i></div>
+                    : <span></span>
+            }
             <div className='cart_container'>
                 <button className={`custom_button ${!isOpen ? 'custom-close-button' : ''}`} onClick={() => { handleToogleIsOpen() }}  >
                     <i className={`bi bi-${isOpen ? 'x' : 'cart4'}`}></i>
@@ -33,11 +35,15 @@ function cart() {
 
                 </div>
             </div>
-            <div className='total '>
-                <div className='d-flex' >
-                    <span style={{ color: 'white' }}>Total purchased : <b>{total} Dinar(s)</b></span>
-                </div>
-            </div>
+            {
+                isOpen
+                    ? <div className='total '>
+                        <div className='d-flex' >
+                            <span style={{ color: 'white' }}>Total purchased : <b>{total} Dinar(s)</b></span>
+                        </div>
+                    </div>
+                    : <span></span>
+            }
         </div>
     )
 }
