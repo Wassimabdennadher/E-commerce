@@ -70,7 +70,7 @@ button:hover {
   background-color: white;
 }
 .total {
-  position: fixed;
+  position: absolute;
   bottom: 0;
   background-color: rgba(22, 22, 22, 0.9);
   width: 100%;
@@ -193,10 +193,11 @@ button:hover {
   position: absolute;
 }
 .shopnstop{
-  position: fixed;
+  position: absolute;
   top: 20px;
-  margin-left: 180px;
+  width: 100%;
   color: white;
+  text-align: center;
 }
 
 .checkbox-label {
