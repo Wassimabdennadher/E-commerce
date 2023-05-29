@@ -7,7 +7,7 @@ function CartProduct(props) {
     return (
         <div className="special-cart-product ">
             <div className='image-container-cart'>
-                <img src={product.thumbnail} className="img-fluid rounded-start" style={{ width: '100%', height: '100%' }} alt="..." />
+                <img src={product.thumbnail} className="img-fluid rounded-start" style={{ width: '100%', height: '100%' , objectFit:'cover' }} alt="..." />
             </div>
             <div className="d-flex flex-column justify-content-center  align-items-around p-2">
                 <h6 className="cut-text">{product.title}</h6>
