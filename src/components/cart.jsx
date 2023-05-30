@@ -37,7 +37,7 @@ function cart() {
                         : <span></span>}
                 </button>
                 <div className='custom-products-cart' >
-                    {isOpen && products.length === 0 ? <span style={{ color: 'white' }}>Add some products here</span> : <span></span>}
+                    {isOpen && products.length === 0 ? <span style={{ color: 'white', overflow:'hidden' }}>Add some products here</span> : <span></span>}
                     {isOpen && products ? products.map((product, index) => {
                         return (
                             <CartProduct key={index} product={product} />

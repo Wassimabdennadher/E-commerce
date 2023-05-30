@@ -11,7 +11,7 @@ function Card(props) {
                     <h5 className="card-title cut-text" title={product.title}>{product.title}</h5>
                     <p className="card-text cut-text" title={product.description}>{product.description}</p>
                     <p className="card-text">{`${product.price} Dinar(s)`}</p>
-                    <a className="btn add-to-cart-button align-self-end" onClick={() => addProduct(product)}>Add to cart</a>
+                    <a className="button align-self-end" onClick={() => addProduct(product)}>Add to cart</a>
                 </div>
             </div>
     )
